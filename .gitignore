@@ -22,7 +22,7 @@ parts/
 sdist/
 var/
 wheels/
-*.db
+#*.db
 *.egg-info/
 .installed.cfg
 *.egg
