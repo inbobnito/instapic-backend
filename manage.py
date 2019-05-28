@@ -30,7 +30,7 @@ host = os.getenv('HOST') or '0.0.0.0'
 """
 @manager.command
 def run():
-    app.run()
+    app.run(host, port)
 
 """
 `test` - runs unit tests.
@@ -44,4 +44,4 @@ def test():
     return 1
 
 if __name__ == "__main__":
-    manager.run(host, port)
+    manager.run()
