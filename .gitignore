@@ -101,6 +101,6 @@ ENV/
 
 # mypy
 .mypy_cache/
-/migrations
+#/migrations
 
 
