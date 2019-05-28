@@ -8,7 +8,36 @@
 
 ## Installation
 
+You'll need `Python3` and `pip`.
+
+You may want to create a [virtual environment](http://flask.pocoo.org/docs/1.0/installation/) first.
+
+First install the dependancies. 
+```
+    $ pip install requirements.txt
+```
+
+Then instantiate the SQLLite3 DB.
+
+```
+    $ python manage.py db init
+    $ python manage.py db migrate -m "initial"
+    $ python manage.py db upgrade
+```
+
 ## Running
+
+To run the app:
+
+```
+    $ python manage.py run 
+```
+
+To run tests:
+
+```
+    $ python manage.py test
+```
 
 ## Development Notes
 
