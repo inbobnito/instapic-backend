@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_cors import CORS
+from werkzeug.contrib.fixers import ProxyFix
 
 from .config import configByName
 
@@ -31,6 +32,9 @@ def createApp(config):
 
     # Load environment specific information
     app.config.from_object(configByName[config])
+
+    # Fix for swagger HTTP/HTTPS cross loading on Heroku.
+    app.wsgi_app = ProxyFix(app.wsgi_app)
 
     # Load SQLAlchemy and Bcrypt
     db.init_app(app)
