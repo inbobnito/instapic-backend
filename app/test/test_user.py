@@ -18,23 +18,28 @@ class TestUser(BaseTestCase):
         return create(data)
 
     def testCreateUser(self):
+        """ Test Create User """
         res = self.__createTestUser('bob')
         self.assertTrue(res[1] == 201)
 
     def testCreateUserExist(self):
+        """ Test Create User on existing user """ 
         self.__createTestUser('bob')
         res = self.__createTestUser('bob')
         self.assertTrue(res[1] == 409)
     
     def testFindUserByName(self):
+        """ Test Find User by name """ 
         self.__createTestUser('bob')
         self.assertTrue(findByUserName('bob') is not None)
 
     def testFindNoUserByName(self):
+        """ Test Cannot find user by name """ 
         res = findByUserName('alice')
         self.assertTrue(res is None)
 
     def testFindAllUsers(self):
+        """ Test Find all users """ 
         self.__createTestUser('bob')
         self.__createTestUser('alice')
         self.__createTestUser('carl')

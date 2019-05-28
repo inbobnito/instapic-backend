@@ -15,6 +15,7 @@ class TestDevConfig(TestCase):
         return app
 
     def testAppIsDev(self):
+        """ Test app is dev """
         self.assertFalse(app.config['SECRET_KEY'] is 'keyboard_cat')
         self.assertTrue(app.config['DEBUG'] is True)
         self.assertFalse(current_app is None)
@@ -27,6 +28,7 @@ class TestUnitTestConfig(TestCase):
         return app
 
     def testAppIsTest(self):
+        """ Test app is test """
         self.assertFalse(app.config['SECRET_KEY'] is 'keyboard_cat')
         self.assertTrue(app.config['DEBUG'])
         self.assertTrue(app.config['SQLALCHEMY_DATABASE_URI'] == 'sqlite:///' + os.path.join(basedir, 'instapic_dev.db'))
@@ -38,6 +40,7 @@ class TestProdConfig(TestCase):
         return app
 
     def testAppIsProd(self):
+        """ Test app is prod """
         self.assertTrue(app.config['DEBUG'] is False)
 
 
