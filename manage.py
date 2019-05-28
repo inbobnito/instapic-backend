@@ -22,6 +22,9 @@ manager = Manager(app)
 migrate = Migrate(app, db)
 manager.add_command('db', MigrateCommand)
 
+port = os.getenv('PORT') or 5000
+host = os.getenv('HOST') or '0.0.0.0'
+
 """
 `run` - starts the backend.
 """
@@ -41,4 +44,4 @@ def test():
     return 1
 
 if __name__ == "__main__":
-    manager.run()
+    manager.run(host, port)
