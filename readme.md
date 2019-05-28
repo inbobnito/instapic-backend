@@ -55,6 +55,8 @@ Coming from an Epress/NodeSJ backends for web development, this was my first pro
 
 ## TODO
 
-- Unit testing is quite minimal. I was a bit too constrained for time to work on the testing. 
+- Unit testing is quite minimal.
+- Better validation
+- Authentication (phone/email) - some kind of passbook framework for management of multiple authentication schemes.
 - In terms of design, it's saving the image data directly to the DB which is far from ideal. I'd wire that up to S3 and just store the upload URL in the image table. 
 - More server side validation, especially around the image uploading.
